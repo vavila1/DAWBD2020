@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Lab5A01702029</title>
+	<meta charset="utf-8"/>
+	<table border="1" style="margin:0 auto">
+                    <tr>
+                        <th>Navegador</th>
+                    </tr>
+                    <tr>
+                        <td><a href="Lab5.html">Lab</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="Preguntas.html">Preguntas</a></td>
+                    </tr>
+                </table>
+</head>
+<body>
+	<header>
+			<h1 style="text-align: center"> Lab5</h1>
+	</header>
+	<article>
+		<form id="miForm" action="" method="get" onsubmit="return validar(this)">
+			<p>
+			Contraseña: <input type="text" id="contra1" />
+			<br>
+			Confirmar Contraseña: <input type="text" id="contra2"/>
+			<input type="submit" value="Enviar" />
+			<input type="reset" value="Borrar" />
+		</p>
+	</form>
+	</article>
+	<article>
+		<form method="POST">
+			<select name="D1" size="3">
+        <option> Papas </option>
+        <option> Gansito </option>
+        <option> Playera </option>
+    </select> 
+    <p>
+    <select name="D2" size="10">
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+    <option>5</option>
+    <option>6</option>
+    <option>7</option>
+    <option>8</option>
+    <option>9</option>
+    <option>10</option>
+    <input type="button" value="Enviar pedidos"
+    onclick="Lab5_2_1(D1.options[D1.selectedIndex].text, D2.options[D2.selectedIndex].text)">
+
+    </p>
+</form>
+	</article>
+</select>
+<script type="text/javascript" src="Lab5.js"></script>
+<script type="text/javascript" src="Lab5_Tienda.js"></script>
+<footer style="text-align:left">
+        <h2>Datos de contacto</h2>
+            <strong> Nombre: </strong>Víctor Manuel Ávila Hernández
+            <br>
+            <strong> Matrícula: </strong>A01702029
+            <br>
+            <strong> <a href="mailto:A01702029@itesm.mx">Mandar Correo Electronico</a></strong>
+            <br>
+            <strong> Creado con</strong> <a href="http://www.sublimetext.com"> Sublime Text </a>
+        </footer>
+</body>
+</html>
