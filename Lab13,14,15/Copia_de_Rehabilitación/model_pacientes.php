@@ -19,19 +19,36 @@
       $resultado = "<table><thead><tr><th>ID</th><th>Nombre</th><th>Apellido Paterno</th><th>Apellido Materno</th><th>Edad</th></tr></thead>";
     
     $consulta = 'Select P.id as P_id, P.nombre as P_nombre, P.apellidop as P_apellidop, P.apellidom as P_apellidom, P.edad as P_edad FROM paciente as P';
+    $simplificacion = "";
+    /* Para evitar los 16 ifs resultantes de las combinaciones entre cada variable, se simplificó de tal forma que se creó una variable y esta variable va a contener todas las condiciones de la consulta. Si no hay una anterior, se pondra como inicial de una consulta. Si hay una anterior, se agregara con un AND.
+    */
     if($id!=""){
-      $consulta.= " Where P.id=".$id;
+      $simplificacion = " Where P.id=".$id;
     }
     if($nombre!=""){
-      $consulta.= " Where P.nombre="."'".$nombre."'";
+      if($simplificacion!=""){
+        $simplificacion.= " AND P.nombre="."'".$nombre."'";
+      }else{
+        $simplificacion = " Where P.nombre="."'".$nombre."'";
+      }
     }
     if($apellidop!=""){
-      $consulta.=" Where P.apellidop="."'".$apellidop."'";
+      if($simplificacion!=""){
+        $simplificacion.= " AND P.apellidop="."'".$apellidop."'";
+      }else{
+         $simplificacion = " Where P.apellidop="."'".$apellidop."'";
+      }
     }
     if($apellidom!=""){
-      $consulta.=" Where P.apellidom="."'".$apellidom."'";
+      if($simplificacion!=""){
+        $simplificacion.= " AND P.apellidom="."'".$apellidom."'";
+      }else{
+        $simplificacion = " Where P.apellidom="."'".$apellidom."'";
+      }
     }
+    $consulta.= $simplificacion;
 
+    
 
     $resultados = mysqli_query($conexion_bd, $consulta);
 
