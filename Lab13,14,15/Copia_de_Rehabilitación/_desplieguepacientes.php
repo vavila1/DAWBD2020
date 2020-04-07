@@ -1,6 +1,6 @@
 <?php
-if (isset($_POST["paciente"])) {
-      $id = htmlspecialchars($_POST["paciente"]);
+if (isset($_POST["ID"])) {
+      $id = htmlspecialchars($_POST["ID"]);
   } else {
       $id = "";
     }

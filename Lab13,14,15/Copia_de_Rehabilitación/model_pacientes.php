@@ -89,7 +89,25 @@ return $resultado;
     return $resultado;
   }
   function busquedaEscrita($descripcion,$nomform){
-    $resultado = '<div class="input-field"><input placeholder="Escribir nombre completo" type="text" class="validate" name="'.$nomform.'"><label for="">'.$descripcion.' del Paciente</label></div>';
+    $resultado = '<div class="input-field"><input placeholder="Escribir '.$descripcion.'" type="text" class="validate" name="'.$nomform.'"><label for="">'.$descripcion.' del Paciente</label></div>';
     return $resultado;
+  }
+
+  //Funcion para insertar un registro de paciente.
+  function insertarPaciente($nombre,$apellidop,$apellidom,$edad){
+    $conexion_bd = conectar_bd();
+    $consulta = 'Insert Into paciente (nombre, apellidop, apellidom, edad) Values (?,?,?,?) ';
+
+
+    /*Con el siguiente codigo se puede encontrar el error en caso de existir.*/
+
+    if ( !($statement = $conexion_bd->prepare($consulta)) ) {
+    }
+    if (!$statement->bind_param("ssss", $nombre, $apellidop, $apellidom, $edad)) {
+    }
+    if (!$statement->execute()) {
+  }
+
+    desconectar_bd($conexion_bd);
   }
 ?>
