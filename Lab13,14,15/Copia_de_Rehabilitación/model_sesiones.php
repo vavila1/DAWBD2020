@@ -25,6 +25,7 @@
 
 
     $consulta = 'Select S.id as S_id, P.id as P_id, P.nombre as P_nombre, F.id as F_id, F.nombre as F_nombre, S.pie as S_pie, S.grado as S_grado, S.created_at as S_created_at FROM paciente as P, sesion as S, fisioterapeuta as F WHERE P.id = S.id_paciente AND F.id = S.id_fisioterapeuta';
+    
      if($idpaciente!=""){
       $consulta .= " AND P.id=".$idpaciente;
       $contador = 0;
@@ -36,7 +37,10 @@
       $consulta.=" AND F.id=".$idfisioterapeuta;
       $contador = 0;
     }
+    $consulta.=" Group By S.id";
     $resultados = mysqli_query($conexion_bd, $consulta);
+
+    echo $consulta;
 
 
 

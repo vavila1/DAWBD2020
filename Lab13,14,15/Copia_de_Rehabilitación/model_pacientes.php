@@ -61,6 +61,10 @@
       $resultado.="<td>".$row['P_apellidop']."</td>";
       $resultado.="<td>".$row['P_apellidom']."</td>";
       $resultado.="<td>".$row['P_edad']."</td>";
+      $resultado.="<td>";
+      $resultado.='<a href="borrar.php?id='.$row['P_id'].'">';
+      $resultado.= botonBorrar();
+      $resultado.="</a></td>";
       $resultado.="</tr>";
     }
   }
@@ -106,8 +110,43 @@ return $resultado;
     if (!$statement->bind_param("ssss", $nombre, $apellidop, $apellidom, $edad)) {
     }
     if (!$statement->execute()) {
+
   }
 
     desconectar_bd($conexion_bd);
+  }
+
+  function botonBorrar(){
+    $resultado = '<button class="btn waves-effect waves-light btn-small" type="submit" id="borrar">
+    <i class="material-icons right">delete</i>
+  </button>';
+    return $resultado;
+  }
+
+  function botonEditar(){
+    $resultado = '<button class="btn waves-effect waves-light btn-small" type="submit" id="editar">
+    <i class="material-icons right">edit</i>
+  </button>';
+    return $resultado;
+  }
+
+  function borrarAlmacen($id){
+
+     $conexion_bd = conectar_bd();
+    $consulta = 'Delete From paciente Where id=(?)';
+
+
+    /*Con el siguiente codigo se puede encontrar el error en caso de existir.*/
+
+    if ( !($statement = $conexion_bd->prepare($consulta)) ) {
+    }
+    if (!$statement->bind_param("i", $id)) {
+    }
+    if (!$statement->execute()) {
+
+  }
+
+    desconectar_bd($conexion_bd);
+
   }
 ?>
