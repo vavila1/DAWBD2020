@@ -1,0 +1,17 @@
+<div class="container">
+        <h3>Login</h3>
+        <br>
+        <div class="row">
+       <?php if (isset($error)): ?>
+        <div class="red-text">Error: <?= $error ?></div>
+    <?php endif; ?>
+<form class="col s8" action="login.php"method="POST">
+
+	 <?=busquedaEscrita("Usuario","usuario");?>
+	 <?=busquedaEscrita("Contraseña","password");?>
+
+           <button class="btn waves-effect waves-light" type="submit" id ="buscar" name="action">Buscar
+    		<i class="material-icons right">send</i>
+			</button>
+</form>
+</div>

@@ -1,0 +1,109 @@
+#borrar{
+    text-decoration: none;
+    color: white;
+    background-color: #FF7070;
+    text-align: center;
+    letter-spacing: .5px;
+    -webkit-transition: background-color .2s ease-out;
+    transition: background-color .2s ease-out;
+    cursor: pointer;
+    width:50px;
+
+}
+
+#borrar:hover{
+    text-decoration: none;
+    color: #FF7070;
+    background-color: white;
+    text-align: center;
+    letter-spacing: .5px;
+    -webkit-transition: background-color .2s ease-out;
+    transition: background-color .2s ease-out;
+    cursor: pointer;
+
+}
+
+#editar{
+    text-decoration: none;
+    color: white;
+    background-color: #59B99A;
+    text-align: center;
+    letter-spacing: .5px;
+    -webkit-transition: background-color .2s ease-out;
+    transition: background-color .2s ease-out;
+    cursor: pointer;
+    width:50px;
+
+}
+
+#editar:hover{
+    text-decoration: none;
+    color: #59B99A;
+    background-color: white;
+    text-align: center;
+    letter-spacing: .5px;
+    -webkit-transition: background-color .2s ease-out;
+    transition: background-color .2s ease-out;
+    cursor: pointer;
+
+}
+
+#buscar{
+    text-decoration: none;
+    color: white;
+    background-color: #ad1457;
+    text-align: center;
+    letter-spacing: .5px;
+    -webkit-transition: background-color .2s ease-out;
+    transition: background-color .2s ease-out;
+    cursor: pointer;
+
+}
+
+
+#buscar:hover{
+    text-decoration: none;
+    color: #ad1457;
+    background-color: white;
+    text-align: center;
+    letter-spacing: .5px;
+    -webkit-transition: background-color .2s ease-out;
+    transition: background-color .2s ease-out;
+    cursor: pointer;
+
+}
+
+#agregar{
+    text-decoration: none;
+    color: white;
+    background-color: #ad1457;
+    text-align: center;
+    letter-spacing: .5px;
+    -webkit-transition: background-color .2s ease-out;
+    transition: background-color .2s ease-out;
+    cursor: pointer;
+
+}
+
+#agregar:hover{
+    text-decoration: none;
+    color: #ad1457;
+    background-color: white;
+    text-align: center;
+    letter-spacing: .5px;
+    -webkit-transition: background-color .2s ease-out;
+    transition: background-color .2s ease-out;
+    cursor: pointer;
+
+}
+
+#agregar i:{
+    color:white;
+
+}
+
+#agregar i:hover{
+    color: #ad1457;
+
+}
+
